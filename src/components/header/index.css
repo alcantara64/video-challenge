@@ -1,0 +1,10 @@
+a.navbar-brand {
+  margin-left: 15px;
+  color: #dd342f !important;
+}
+.navbar-expand-lg .navbar-nav-scroll {
+  margin: 0px 41px 0px 44px;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #dd342f;
+}
