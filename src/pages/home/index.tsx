@@ -119,5 +119,4 @@ export const MoviesContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 100px;
-}
 `;
