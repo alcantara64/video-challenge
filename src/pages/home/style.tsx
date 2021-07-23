@@ -37,3 +37,9 @@ export const PageContainer = styled.div<IProps>`
 export const ScrollContainer = styled.div`
   height: 100vh;
 `;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+`;

@@ -39,7 +39,7 @@ export const MovieStoreModel = types
 
             const payerService = new MovieService();
 
-            const result = yield payerService.getMovies();
+            const result = yield payerService.getMovies(1);
 
             if (result && result.kind === "ok") {
                 if (result.data) {

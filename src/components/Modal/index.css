@@ -1,0 +1,7 @@
+.app-Modal {
+  border-radius: 20px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}

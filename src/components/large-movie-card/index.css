@@ -1,3 +1,24 @@
-p{
-    text-align: justify;
+p {
+  text-align: justify;
+}
+@media screen and (max-width: 991px) {
+  p {
+    width: 100vw;
+  }
+}
+.card-body {
+  background-color: black;
+}
+.action-button {
+  width: 100%;
+}
+
+.card-img {
+  height: 20%;
+  width: 30%;
+  margin-right: 2rem;
+  image-rendering: pixelated;
+  object-fit: scale-down;
+  background-size: cover;
+  border-radius: 1rem;
 }

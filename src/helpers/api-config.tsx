@@ -1,4 +1,3 @@
-
 const API_URL = process.env.REACT_APP_API_URL;
 
 export interface ApiConfig {
@@ -17,6 +16,7 @@ export interface ApiConfig {
  * The default configuration for the app.
  */
 export const DEFAULT_API_CONFIG: ApiConfig = {
-  url: API_URL || "https://api.tvmaze.com/",
+  url: API_URL || 'https://api.tvmaze.com/',
   timeout: 10000,
 };
+export const LocalAppUrl = process.env.REACT_APP_LOCAL_API_URI;

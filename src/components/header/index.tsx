@@ -10,9 +10,9 @@ import {
 import App from '../../App';
 import './index.css';
 
-const Header = ({ onSearch }: any) => (
+const Header = ({ onSearch, showSearch }: any) => (
   <>
-    <Navbar bg="dark" expand="lg">
+    <Navbar bg="dark" expand="lg" className="shadow p-3 mb-5">
       <Navbar.Brand className="nav-tex" href="#">
         Movie App
       </Navbar.Brand>
@@ -30,13 +30,15 @@ const Header = ({ onSearch }: any) => (
           </NavDropdown>
         </Nav>
 
-        <FormControl
-          type="search"
-          onChange={onSearch}
-          placeholder="Search"
-          className="mr-2 input-lg"
-          aria-label="Search"
-        />
+        {showSearch && (
+          <FormControl
+            type="search"
+            onChange={onSearch}
+            placeholder="Search movies here .."
+            className="mr-2 input-lg search-bar"
+            aria-label="Search"
+          />
+        )}
       </Navbar.Collapse>
     </Navbar>
   </>
