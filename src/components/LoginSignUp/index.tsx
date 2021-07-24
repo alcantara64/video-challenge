@@ -17,6 +17,7 @@ export default function LoginSignUP({ showSignUp, onHide }: any) {
     const result = await authService.register(payload);
     if (result && result.data) {
       NotificationService.show('Account created successfully', 'success');
+      setshowRegister(false);
     } else {
       NotificationService.show(result.data, 'error');
     }
@@ -27,6 +28,7 @@ export default function LoginSignUP({ showSignUp, onHide }: any) {
     console.log('result ==>', result);
     if (result.kind === 'ok' && result.data && result.data.token) {
       localStorage.setItem('token', result.data.token);
+      setshowModal(false);
     } else {
       setshowFailureAlert(false);
       NotificationService.show(result.data, 'error');

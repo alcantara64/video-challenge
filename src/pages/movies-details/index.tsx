@@ -39,7 +39,7 @@ const MoviesDetail = (props: any) => {
       movieService
         .addToFavorite(token, movie)
         .then(() => {
-          NotificationService.show('Created successfully', 'success');
+          NotificationService.show('Added to favorite successfully', 'success');
         })
         .catch((err) => {
           NotificationService.show(err.message, 'error');
