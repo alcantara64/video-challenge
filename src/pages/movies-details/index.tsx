@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Row, Col, Container, Image } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import Header from '../../components/header';
 import { AppButton, RenderSummary } from '../../components/large-movie-card';
 import Loading from '../../components/Loading';
 import LoginSignUP from '../../components/LoginSignUp';
@@ -53,45 +54,48 @@ const MoviesDetail = (props: any) => {
   }, []);
 
   return (
-    <Container>
-      <DetailRow>
-        <Col lg={6} md={12} sm={12}>
-          <H2> {movie?.name}</H2>
-          <div className="star-rating">
-            <span className="fa fa-star-o" data-rating="1"></span>
-            <span className="fa fa-star-o" data-rating="2"></span>
-            <span className="fa fa-star-o" data-rating="3"></span>
-            <span className="fa fa-star-o" data-rating="4"></span>
-            <span className="fa fa-star-o" data-rating="5"></span>
-            <input
-              type="hidden"
-              name="whatever1"
-              className="rating-value"
-              value="2.56"
-            />
-          </div>
-          <RenderSummary text={movie?.summary} />
-          {showLogin && (
-            <LoginSignUP
-              onHide={() => {
-                setShowlogin(false);
+    <>
+      <Header />
+      <Container className="detailed-container">
+        <DetailRow>
+          <Col lg={6} md={12} sm={12}>
+            <H2> {movie?.name}</H2>
+            <div className="star-rating">
+              <span className="fa fa-star-o" data-rating="1"></span>
+              <span className="fa fa-star-o" data-rating="2"></span>
+              <span className="fa fa-star-o" data-rating="3"></span>
+              <span className="fa fa-star-o" data-rating="4"></span>
+              <span className="fa fa-star-o" data-rating="5"></span>
+              <input
+                type="hidden"
+                name="whatever1"
+                className="rating-value"
+                value="2.56"
+              />
+            </div>
+            <RenderSummary text={movie?.summary} />
+            {showLogin && (
+              <LoginSignUP
+                onHide={() => {
+                  setShowlogin(false);
+                }}
+              ></LoginSignUP>
+            )}
+            <AppButton
+              onClick={() => {
+                addToFavourite();
               }}
-            ></LoginSignUP>
-          )}
-          <AppButton
-            onClick={() => {
-              addToFavourite();
-            }}
-          >
-            Add To Favorite
-          </AppButton>
-        </Col>
-        <Col lg={6}>
-          <Image src={movie?.image?.original} alt="  details" height="600" />
-        </Col>
-      </DetailRow>
-      {loading && <Loading />}
-    </Container>
+            >
+              Add To Favorite
+            </AppButton>
+          </Col>
+          <Col lg={6}>
+            <Image src={movie?.image?.original} alt="  details" height="600" />
+          </Col>
+        </DetailRow>
+        {loading && <Loading />}
+      </Container>
+    </>
   );
 };
 const DetailRow = styled(Row)`
